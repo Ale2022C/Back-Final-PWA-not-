@@ -4,6 +4,7 @@ const cors = require("cors");
 
 //CREAMOS EL SERVIDOR
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 //CONECTAMOS A LA DB
 conectarDB();
@@ -13,6 +14,6 @@ app.use(express.json());
 
 app.use('/api/productos', require('./routes/producto'));
 
-app.listen(4000, () => {
-    console.log('El servidor está corriendo perfectamente');
+app.listen(PORT, () => {
+    console.log(`El servidor está corriendo perfectamente en el puerto ${PORT}`);
 })
